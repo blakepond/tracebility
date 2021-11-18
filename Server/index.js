@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const {SERVER_PORT} = process.env
+// const {SERVER_PORT} = process.env
 const {seed, getCountries, getCities, createCity, deleteCity} = require('./controller')
 const app = express();
 
