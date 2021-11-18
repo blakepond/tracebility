@@ -40,7 +40,7 @@ app.delete('/cities/:id', deleteCity)
 
 const port = process.env.PORT || 4545;
 
-app.listen(SERVER_PORT, ()=> console.log(`up on ${SERVER_PORT}`))
+// app.listen(SERVER_PORT, ()=> console.log(`up on ${SERVER_PORT}`))
 app.listen(port, ()=> {
     console.log(`Running on ${port}`)
 });
