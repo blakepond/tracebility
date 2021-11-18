@@ -10,13 +10,31 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-app.post('/api/seed', seed)
+app.get("/", (req,res)=> {
+    res.sendFile(path.join(__dirname, "/Public/index.html"));
+    // rollbar.info("HTML file served successfully")
+})
 
-app.get('/api/countries', getCountries)
+app.use("/css", express.static(path.join(__dirname,'/Public/index.css')))
 
-app.post('/api/cities', createCity)
-app.get('/api/cities', getCities)
-app.delete('/api/cities/:id', deleteCity)
+app.get("/js", (req,res)=> {
+    res.sendFile(path.join(__dirname, '../Public/main.js'))
+})
+
+app.get("/js", (req,res)=> {
+    res.sendFile(path.join(__dirname, '../Server/controller.js'))
+})
+app.get("/js", (req,res)=> {
+    res.sendFile(path.join(__dirname, '../Server/index.js'))
+})
+
+app.post('/seed', seed)
+
+app.get('/countries', getCountries)
+
+app.post('/cities', createCity)
+app.get('/cities', getCities)
+app.delete('/cities/:id', deleteCity)
 
 // app.use(rollbar.errorHandler());
 
