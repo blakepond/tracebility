@@ -21,12 +21,6 @@ app.get("/js", (req,res)=> {
     res.sendFile(path.join(__dirname, '../Public/main.js'))
 })
 
-app.get("/js", (req,res)=> {
-    res.sendFile(path.join(__dirname, '../Server/controller.js'))
-})
-app.get("/js", (req,res)=> {
-    res.sendFile(path.join(__dirname, '../Server/index.js'))
-})
 
 app.post('/seed', seed)
 
